@@ -21,6 +21,8 @@ Config.loadConfiguration("config.json").then(() => {
 		const url = new URL(window.location);
 		url.searchParams.set('map',selectedMap.id);
 		window.history.pushState({}, '', url);
+                document.title = "Просмотр карты — " + selectedMap.name;
+                document.querySelector('meta[name="description"]').content = "Онлайн просмотр карты станции '" + selectedMap.name + "'";
 		map.addLayer(Markers.drawMarkerLayer(getMarkers()));
 	}
 
