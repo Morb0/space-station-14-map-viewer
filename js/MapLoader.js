@@ -63,6 +63,7 @@ class MapLoader {
 		const map = new Map({
 			layers: layers,
 			target: 'map',
+                        maxTilesLoading: 20,
 			view: new View({
 				projection: projection,
 				center: getCenter([map0Extent.a.x, map0Extent.a.y, map0Extent.b.x, map0Extent.b.y]),
